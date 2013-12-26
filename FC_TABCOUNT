@@ -1,0 +1,19 @@
+--输入表名，返回表的记录数
+CREATE OR REPLACE FUNCTION FC_TABCOUNT (table_in IN VARCHAR2) RETURN PLS_INTEGER
+IS
+  l_query VARCHAR2(32767) := 'SELECT COUNT(*) FROM ' || table_in;
+  l_return PLS_INTEGER;
+BEGIN
+  EXECUTE IMMEDIATE l_query INTO l_return;
+  RETURN l_RETURN;
+END FC_TABCOUNT;
+
+-- Created on 2013/12/26 by ZHANGTF10208 
+declare 
+  -- Local variables here
+  i integer;
+begin
+  -- Test statements here
+  i := fc_tabcount('ttainfo');
+  DBMS_OUTPUT.PUT_LINE(i);
+end;
