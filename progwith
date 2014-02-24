@@ -1,0 +1,6 @@
+procedure progwith (str IN varchar2)
+IS
+  TYPE info_rt IS record(
+  NAME user_source.NAME%TYPE,
+  text user_source.text%TYPE
+  );
